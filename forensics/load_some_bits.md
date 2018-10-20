@@ -1,0 +1,21 @@
+# LEVEL GOAL
+
+Can you find the flag encoded inside this image [1] ? You can also find the file in /problems/loadsomebits_4_7be73021cd0c9c84b08937323b0d6ae1 on the shell server.
+
+# HINTS
+
+(1) Look through the Least Significant Bits for the image (2) If you interpret a binary sequence (seq) as ascii and then try interpreting the same binary sequence from an offset of 1 (seq[1:]) as ascii do you get something similar or completely different?
+
+# SOLUTION
+
+1. Get a binary dump of the image using xxd -b
+
+2. List out the LSB sequence line by line - this needs automation, I didn't find any suitable
+
+3. Got this: and then convert it to string
+
+010100000000000000000000001000000001000100010000000000011100000110100101100011011011110100001101010100010001100111101101110011011101000011000001110010001100110110010001011111011010010100111001011111011101000100100000110011010111110110110000110011001101000011010101110100010111110111001100110001011001110110111000110001011001100011000101100011001101000110111001010100010111110110001000110001011101000011010101011111001100100011100100110000001100110011010100111001001100110011011000111001001100110111110100
+
+# FLAG
+
+picoCTF{st0r3d_iN_tH3_l345t_s1gn1f1c4nT_b1t5_2903593693}
