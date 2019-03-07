@@ -19,7 +19,7 @@ sdadadfnasd
 That's all folks.
 ```
 
-On studying the `do_magic()`, I came up with the following pseudo-code:
+On studying `do_magic()`, I came up with the following pseudo-code:
 
 ```
 input = read_input()
@@ -63,9 +63,9 @@ var2 += 1
 }
 ```
 
-We can see that the code is trying to compare the string, "You have now entered the Duck Web, and you're in for a honkin' good time.\nCan you figure out my trick?" with the result of input ^ secret_buffer. The next step is to find the value of input such that the printf("You are winner!") statement is executed.
+We can see that the code is trying to compare the string, `"You have now entered the Duck Web, and you're in for a honkin' good time.\nCan you figure out my trick?"` with the result of `input ^ secret_buffer`. The next step is to find the value of `input` such that the `printf("You are winner!")` statement is executed.
 
-25 bytes of secret_buffer are as follows:
+25 bytes of `secret_buffer` are as follows:
 
 ```
 (gdb) x/25xb 0x8048858
@@ -75,7 +75,7 @@ We can see that the code is trying to compare the string, "You have now entered 
 0x8048870 <sekrutBuffer+24>: 0x5d
 ```
 
-I was lucky xor was used in this operation because it is very easy to write decryption code. I wrote one such in Python:
+I was lucky `xor` was used in this operation because it is very easy to write decryption code. I wrote one such in Python:
 
 ```
 output = [0x59, 0x6f, 0x75, 0x20, 0x68, 0x61, 0x76, 0x65, 0x20, 0x6e, 0x6f, 0x77, 0x20, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x65, 0x64, 0x20, 0x74, 0x68, 0x65, 0x20]
