@@ -19,7 +19,7 @@ sdadadfnasd
 That's all folks.
 ```
 
-On studying the do_magic assembly, I came up with the following pseudo-code:
+On studying the `do_magic()`, I came up with the following pseudo-code:
 
 ```
 input = read_input()
